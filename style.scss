@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 0;
+    }
+    25% {
+        background-position: 25% 25%;
+    }
+    50%{
+        background-position: 50% 50%;
+    }
+    75%{
+        background-position: 75% 75%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+
+}
+
+body {
+    background: rgb(0, 35, 36);
+    background-image:linear-gradient(45deg , #ee9074, #d43e7d, #61bee0, #1d3cc5) ;
+    background-size: 400% 400%;
+    animation: gradient 10s linear infinite alternate;
+
+    >.staires {
+        margin: 45px auto;
+        width: 500px;
+        // border: 1px solid salmon;
+        transform: rotate3d(6, -10, 5, -47deg);
+        transform-style: preserve-3d;
+
+        &:hover>li::before {
+            margin-top: -80px;
+        }
+
+        >li {
+            list-style-type: none;
+            width: 100%;
+            height: 80px;
+            // border:1px solid goldenrod;
+            overflow: hidden;
+
+            &::before,
+            &::after {
+                content: '';
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                color: white;
+                font-size: 60px;
+                letter-spacing: 1px;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                width: 100%;
+                height: 100%;
+                // border: 1px solid brown;
+                transition: 0.8s;
+            }
+
+            &:nth-of-type(even) {
+                transform-origin: top;
+            }
+
+            &:nth-of-type(1) {
+                &::after {
+                    content: "css only";
+                }
+            }
+
+            &:nth-of-type(2) {
+                transform: rotateX(90deg);
+
+                &::before {
+                    content: "css only";
+                }
+
+                &::after {
+                    content: "perspective";
+                }
+            }
+
+            &:nth-of-type(3) {
+                transform: translate3d(0, -80px, 80px);
+
+                &::before {
+                    content: "perspective";
+                }
+
+                &::after {
+                    content: "text effect";
+                }
+            }
+
+            &:nth-of-type(4) {
+                transform: rotatex(90deg) translate3d(0, 80px, 80px);
+
+                &::before {
+                    content: "text effect";
+                }
+
+                &::after {
+                    content: "by";
+                }
+            }
+
+            &:nth-of-type(5) {
+                transform: translate3d(0, -160px, 160px);
+
+                &::before {
+                    content: "by";
+                }
+
+                &::after {
+                    content: "soheila";
+                }
+            }
+
+            &:nth-of-type(6) {
+                transform: rotateX(90deg) translate3d(0, 160px, 160px);
+
+                &::before {
+                    content: "soheila";
+                }
+
+                &::after {
+                    content: " hasanpoor";
+                }
+            }
+
+            &:nth-of-type(7) {
+                transform: translate3d(0, -240px, 240px);
+
+                &::before {
+                    content: "hasanpoor";
+                }
+            }
+        }
+    }
+}
